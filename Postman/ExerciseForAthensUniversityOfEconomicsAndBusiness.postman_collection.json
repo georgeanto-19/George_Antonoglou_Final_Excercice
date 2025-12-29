@@ -1,0 +1,893 @@
+{
+	"info": {
+		"_postman_id": "cee59f0f-19eb-4830-9a4d-5bb3e3b75f1a",
+		"name": "ExerciseForAthensUniversityOfEconomicsAndBusiness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6230134"
+	},
+	"item": [
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "Get All Owners",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/owner",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Owner",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Georgis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/owner",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Owner By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/owner/taxId004",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner",
+								"taxId004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Owner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerTaxId\": \"taxId004\",\r\n    \"name\": \"Nikolas2\",\r\n    \"surname\": \"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/owner",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Owner",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerTaxId\": \"taxId004\",\r\n    \"name\": \"Nikolas2\",\r\n    \"surname\": \"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/owner",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Owner By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/owner/taxId004",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner",
+								"taxId004"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Insurance",
+			"item": [
+				{
+					"name": "Get All Insurance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/insurance",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"insurance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Insurance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"insuranceId\":\"insurance001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/insurance",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"insurance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Insurance By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/insurance/insurance001",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"insurance",
+								"insurance001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Insurance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"insuranceId\": \"insurance003\",\r\n        \"expiryDate\": \"2026-12-16T19:34:00.125Z\",\r\n        \"ownerTaxId\": \"taxId003\",\r\n        \"price\": 150\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/insurance",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"insurance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Insurance By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/insurance/taxId004",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"insurance",
+								"taxId004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Owners Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/owner",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"owner"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Get All Vehicle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/vehicle",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vehicle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plateNumber\":\"plate001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/vehicle",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vehicle By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/vehicle/plate001",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"vehicle",
+								"plate001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"plateNumber\": \"plate003\",\r\n        \"insuranceDate\": \"Tue Dec 16 2025 19:34:00 GMT+0000 (Coordinated Universal Time)\",\r\n        \"ownerTaxId\": \"taxId003\",\r\n        \"brand\": \"Toyota\",\r\n        \"model\": \"Camry\",\r\n        \"color\": \"Red\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/vehicle",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vehicle By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/vehicle/plate003",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"vehicle",
+								"plate003"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Repair",
+			"item": [
+				{
+					"name": "Get All Repairs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/repair",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"repair"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Repair",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"repairId\": \"repair002\",\r\n    \"plateNumber\":\"plate002\",\r\n    \"startDate\":\"2023-12-14\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/repair",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"repair"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Repair",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"plateNumber\": \"plate003\",\r\n        \"insuranceDate\": \"Tue Dec 16 2025 19:34:00 GMT+0000 (Coordinated Universal Time)\",\r\n        \"ownerTaxId\": \"taxId003\",\r\n        \"brand\": \"Toyota\",\r\n        \"model\": \"Camry\",\r\n        \"color\": \"Red\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/repair",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"repair"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Repair By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/repair/plate003",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"repair",
+								"plate003"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is valid JSON with token\", function () {",
+									"    let jsonData;",
+									"    ",
+									"    try {",
+									"        jsonData = pm.response.json();",
+									"    } catch (e) {",
+									"        pm.expect.fail(\"Response is not valid JSON\");",
+									"    }",
+									"",
+									"    // pm.expect(jsonData).to.have.property('token', undefined, \"Response JSON does not contain 'token' property\");",
+									"    // pm.expect(jsonData.token).to.be.a('string').and.not.be.empty;",
+									"    ",
+									"    pm.environment.set(\"TOKEN\", jsonData.token);",
+									"    console.log(\"Token saved to environment variable 'TOKEN'\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"georgisantonoglou\",\r\n    \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/auth",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "full",
+			"item": [
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "{{Accept-Language}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/full?maxResults=2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"full"
+							],
+							"query": [
+								{
+									"key": "maxResults",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "initDb",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "{{Accept-Language}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/initialDb",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"initialDb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}health",
+					"host": [
+						"{{url}}health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
