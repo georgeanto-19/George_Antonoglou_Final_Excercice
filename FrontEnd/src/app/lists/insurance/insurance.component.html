@@ -1,0 +1,75 @@
+<div>
+	<mat-card class="row col-12 card centered">
+		<mat-card-header class="col-12 card-header centered">
+			<mat-card-title>
+				Insurance
+				<button matButton (click)="addInsurance()">
+					ADD <mat-icon>add</mat-icon>
+				</button>
+			</mat-card-title>
+		</mat-card-header>
+		<mat-card-content class="row col-12 card-content centered">
+			@if(insurances){ @for(insurance of insurances.controls; track
+			insurance.get('insuranceId').value){
+			<section class="row col-12 centered" [formGroup]="$any(insurance)">
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="insuranceId"
+						formControlName="insuranceId"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="ownerTaxId"
+						formControlName="ownerTaxId"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="plateNumber"
+						formControlName="plateNumber"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<mat-label>Expiry Date</mat-label>
+					<input matInput [matDatepicker]="dp1" formControlName="expiryDate" />
+					<mat-hint>MM/DD/YYYY</mat-hint>
+					<mat-datepicker-toggle
+						matIconSuffix
+						[for]="dp1"
+					></mat-datepicker-toggle>
+					<mat-datepicker touchUi #dp1></mat-datepicker>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="number"
+						placeholder="price"
+						formControlName="price"
+					/>
+				</mat-form-field>
+				<div class="col-auto">
+					@if(insurance.disabled){
+					<button matButton (click)="editInsurance($any(insurance))">
+						<mat-icon>edit</mat-icon>
+					</button>
+					} @if(!insurance.disabled){
+					<button matButton (click)="saveInsurance($any(insurance))">
+						<mat-icon>save</mat-icon>
+					</button>
+					}
+					<button matButton (click)="deleteInsurance($any(insurance))">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</div>
+			</section>
+			}}
+		</mat-card-content>
+	</mat-card>
+</div>

@@ -1,0 +1,220 @@
+<div>
+	<mat-card class="row col-12 card centered">
+		<mat-card-header class="col-12 card-header centered">
+			<mat-card-title class="card-title centered"
+				>Owners:
+				<input
+					class="col-auto"
+					matInput
+					type="number"
+					matTooltip="Max Results"
+					[(ngModel)]="maxResults"
+				/>
+				<button matButton (click)="loadData()">
+					<mat-icon>search</mat-icon>
+				</button>
+			</mat-card-title>
+			<!-- <mat-card-title>
+				<button matButton (click)="add()">ADD <mat-icon>add</mat-icon></button>
+			</mat-card-title> -->
+		</mat-card-header>
+		<mat-card-content class="row col-12 card-content centered">
+			@if(owners){ @for(owner of owners.controls; track
+			owner.get('ownerTaxId').value){
+			<mat-card class="row col-12 centered">
+				<mat-card-header class="col-12 card-header centered">
+					<mat-card-title>
+						Owner: {{ owner.get("name").value }}
+					</mat-card-title>
+				</mat-card-header>
+				<mat-card-content class="row card-content col-12 centered">
+					<section class="row col-12 centered" [formGroup]="$any(owner)">
+						<mat-form-field class="col-auto">
+							<input
+								matInput
+								type="text"
+								placeholder="ownerTaxId"
+								formControlName="ownerTaxId"
+							/>
+						</mat-form-field>
+						<mat-form-field class="col-auto">
+							<input
+								matInput
+								type="text"
+								placeholder="name"
+								formControlName="name"
+							/>
+						</mat-form-field>
+						<mat-form-field class="col-auto">
+							<input
+								matInput
+								type="text"
+								placeholder="surname"
+								formControlName="surname"
+							/>
+						</mat-form-field>
+						<mat-form-field class="col-auto">
+							<input
+								matInput
+								type="email"
+								placeholder="email"
+								formControlName="email"
+							/>
+						</mat-form-field>
+						<mat-form-field class="col-auto">
+							<input
+								matInput
+								type="number"
+								placeholder="age"
+								formControlName="age"
+							/>
+						</mat-form-field>
+						<mat-form-field class="col-auto">
+							<input
+								matInput
+								type="text"
+								placeholder="gender"
+								formControlName="gender"
+							/>
+						</mat-form-field>
+						<div>
+							@if(owner.get('vehicles')){ @for(vehicle of
+							$any(owner.get('vehicles')).controls; track
+							vehicle.get('plateNumber').value){ Vehicle
+							<section class="row col-12 centered" [formGroup]="$any(vehicle)">
+								<mat-form-field class="col-auto">
+									<input
+										matInput
+										type="text"
+										placeholder="plateNumber"
+										formControlName="plateNumber"
+									/>
+								</mat-form-field>
+								<mat-form-field class="col-auto">
+									<mat-label>Insurance Date</mat-label>
+									<input
+										matInput
+										[matDatepicker]="dp1"
+										formControlName="insuranceDate"
+									/>
+									<mat-hint>MM/DD/YYYY</mat-hint>
+									<mat-datepicker-toggle
+										matIconSuffix
+										[for]="dp1"
+									></mat-datepicker-toggle>
+									<mat-datepicker touchUi #dp1></mat-datepicker>
+								</mat-form-field>
+								<mat-form-field class="col-auto">
+									<input
+										matInput
+										type="text"
+										placeholder="ownerTaxId"
+										formControlName="ownerTaxId"
+									/>
+								</mat-form-field>
+								<mat-form-field class="col-auto">
+									<input
+										matInput
+										type="text"
+										placeholder="brand"
+										formControlName="brand"
+									/>
+								</mat-form-field>
+								<mat-form-field class="col-auto">
+									<input
+										matInput
+										type="text"
+										placeholder="model"
+										formControlName="model"
+									/>
+								</mat-form-field>
+								<mat-form-field class="col-auto">
+									<input
+										matInput
+										type="color"
+										placeholder="color"
+										formControlName="color"
+									/>
+								</mat-form-field>
+							</section>
+							<div>
+								@if(vehicle.get('insurances')){ @for(insurance of
+								$any(vehicle.get('insurances')).controls; track
+								insurance.get('insuranceId').value){ Insurance
+								<section
+									class="row col-12 centered"
+									[formGroup]="$any(insurance)"
+								>
+									<mat-form-field class="col-auto">
+										<input
+											matInput
+											type="text"
+											placeholder="insuranceId"
+											formControlName="insuranceId"
+										/>
+									</mat-form-field>
+									<mat-form-field class="col-auto">
+										<input
+											matInput
+											type="text"
+											placeholder="ownerTaxId"
+											formControlName="ownerTaxId"
+										/>
+									</mat-form-field>
+									<mat-form-field class="col-auto">
+										<input
+											matInput
+											type="text"
+											placeholder="plateNumber"
+											formControlName="plateNumber"
+										/>
+									</mat-form-field>
+									<mat-form-field class="col-auto">
+										<mat-label>Expiry Date</mat-label>
+										<input
+											matInput
+											[matDatepicker]="dp1"
+											formControlName="expiryDate"
+										/>
+										<mat-hint>MM/DD/YYYY</mat-hint>
+										<mat-datepicker-toggle
+											matIconSuffix
+											[for]="dp1"
+										></mat-datepicker-toggle>
+										<mat-datepicker touchUi #dp1></mat-datepicker>
+									</mat-form-field>
+									<mat-form-field class="col-auto">
+										<input
+											matInput
+											type="number"
+											placeholder="price"
+											formControlName="price"
+										/>
+									</mat-form-field>
+									<div class="col-auto"></div>
+								</section>
+								}}
+							</div>
+							}}
+						</div>
+					</section>
+				</mat-card-content>
+			</mat-card>
+			<!--<div>
+				 @if(owner.disabled){
+				<button matButton (click)="edit($any(owner))">
+					<mat-icon>edit</mat-icon>
+				</button>
+				} @if(!owner.disabled){
+				<button matButton (click)="save($any(owner))">
+					<mat-icon>save</mat-icon>
+				</button>
+				}
+				<button matButton (click)="delete($any(owner))">
+					<mat-icon>delete</mat-icon>
+				</button>
+			</div>-->
+			}}
+		</mat-card-content>
+	</mat-card>
+</div>

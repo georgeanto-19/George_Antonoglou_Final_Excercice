@@ -1,0 +1,69 @@
+<div>
+	<mat-card class="row col-12 card centered">
+		<mat-card-header class="col-12 card-header centered">
+			<mat-card-title>
+				Repairs
+				<button matButton (click)="addRepair()">
+					ADD <mat-icon>add</mat-icon>
+				</button>
+			</mat-card-title>
+		</mat-card-header>
+		<mat-card-content class="row col-12 card-content centered">
+			@if(repairs){ @for(repair of repairs.controls; track
+			repair.get('plateNumber').value){
+			<section class="row col-12 centered" [formGroup]="$any(repair)">
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="repairId"
+						formControlName="repairId"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="String"
+						formControlName="plateNumber"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<mat-label>Start Date</mat-label>
+					<input matInput [matDatepicker]="dp1" formControlName="startDate" />
+					<mat-hint>MM/DD/YYYY</mat-hint>
+					<mat-datepicker-toggle
+						matIconSuffix
+						[for]="dp1"
+					></mat-datepicker-toggle>
+					<mat-datepicker touchUi #dp1></mat-datepicker>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<mat-label>End Date</mat-label>
+					<input matInput [matDatepicker]="dp2"formControlName="endDate" />
+					<mat-hint>MM/DD/YYYY</mat-hint>
+					<mat-datepicker-toggle
+						matIconSuffix
+						[for]="dp2"
+					></mat-datepicker-toggle>
+					<mat-datepicker touchUi #dp2></mat-datepicker>
+				</mat-form-field>
+				<div class="col-auto">
+					@if(repair.disabled){
+					<button matButton (click)="editRepair($any(repair))">
+						<mat-icon>edit</mat-icon>
+					</button>
+					} @if(!repair.disabled){
+					<button matButton (click)="saveRepair($any(repair))">
+						<mat-icon>save</mat-icon>
+					</button>
+					}
+					<button matButton (click)="deleteRepair($any(repair))">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</div>
+			</section>
+			}}
+		</mat-card-content>
+	</mat-card>
+</div>

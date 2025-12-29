@@ -1,0 +1,81 @@
+<div>
+	<mat-card class="row col-12 card centered">
+		<mat-card-header class="col-12 card-header centered">
+			<mat-card-title>
+				Owners
+				<button matButton (click)="addOwner()">
+					ADD <mat-icon>add</mat-icon>
+				</button>
+			</mat-card-title>
+		</mat-card-header>
+		<mat-card-content class="row col-12 card-content centered">
+			@if(owners){ @for(owner of owners.controls; track
+			owner.get('ownerTaxId').value){
+			<section class="row col-12 centered" [formGroup]="$any(owner)">
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="ownerTaxId"
+						formControlName="ownerTaxId"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="name"
+						formControlName="name"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="surname"
+						formControlName="surname"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="email"
+						placeholder="email"
+						formControlName="email"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="number"
+						placeholder="age"
+						formControlName="age"
+					/>
+				</mat-form-field>
+				<mat-form-field class="col-auto">
+					<input
+						matInput
+						type="text"
+						placeholder="gender"
+						formControlName="gender"
+					/>
+				</mat-form-field>
+				<div class="col-auto">
+					@if(owner.disabled){
+					<button matButton (click)="editOwner($any(owner))">
+						<mat-icon>edit</mat-icon>
+					</button>
+					} @if(!owner.disabled){
+					<button matButton (click)="saveOwner($any(owner))">
+						<mat-icon>save</mat-icon>
+					</button>
+					}
+					<button matButton (click)="deleteOwner($any(owner))">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</div>
+			</section>
+			}}
+		</mat-card-content>
+	</mat-card>
+</div>
